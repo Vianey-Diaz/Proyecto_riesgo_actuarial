@@ -1,0 +1,110 @@
+{
+    "nombre_modelo": "K-Means (k=3) + PCA + SVM para riesgo actuarial en seguros médicos",
+    "tipo_modelo": "Aprendizaje no supervisado (K-Means) con PCA para visualización y SVM de apoyo",
+    "dataset": "insurance.csv",
+    "variables_numericas": [
+        "age",
+        "bmi",
+        "children",
+        "charges"
+    ],
+    "variables_categoricas": [
+        "sex",
+        "smoker",
+        "region"
+    ],
+    "k": 3,
+    "mapa_riesgo": {
+        "2": "Bajo",
+        "1": "Medio",
+        "0": "Alto"
+    },
+    "silhouette": 0.2,
+    "tabla_codo_silhouette": [
+        {
+            "k": 2,
+            "inercia": 5377.2228,
+            "silhouette": 0.185
+        },
+        {
+            "k": 3,
+            "inercia": 4515.235,
+            "silhouette": 0.2
+        },
+        {
+            "k": 4,
+            "inercia": 3778.2633,
+            "silhouette": 0.2207
+        },
+        {
+            "k": 5,
+            "inercia": 3396.7052,
+            "silhouette": 0.2071
+        },
+        {
+            "k": 6,
+            "inercia": 3165.3682,
+            "silhouette": 0.1828
+        },
+        {
+            "k": 7,
+            "inercia": 2974.0801,
+            "silhouette": 0.177
+        },
+        {
+            "k": 8,
+            "inercia": 2837.9506,
+            "silhouette": 0.1745
+        },
+        {
+            "k": 9,
+            "inercia": 2719.2557,
+            "silhouette": 0.1748
+        },
+        {
+            "k": 10,
+            "inercia": 2621.8882,
+            "silhouette": 0.1673
+        }
+    ],
+    "perfiles": [
+        {
+            "cluster": 0,
+            "clientes": 157,
+            "edad_promedio": 39.4,
+            "bmi_promedio": 35.3,
+            "hijos_promedio": 1.1,
+            "cargo_promedio": 40965.0,
+            "pct_fumadores": 94.9,
+            "riesgo": "Alto"
+        },
+        {
+            "cluster": 1,
+            "clientes": 593,
+            "edad_promedio": 51.2,
+            "bmi_promedio": 31.3,
+            "hijos_promedio": 1.2,
+            "cargo_promedio": 12759.1,
+            "pct_fumadores": 10.1,
+            "riesgo": "Medio"
+        },
+        {
+            "cluster": 2,
+            "clientes": 587,
+            "edad_promedio": 27.1,
+            "bmi_promedio": 28.8,
+            "hijos_promedio": 1.0,
+            "cargo_promedio": 6399.5,
+            "pct_fumadores": 11.1,
+            "riesgo": "Bajo"
+        }
+    ],
+    "varianza_pca": [
+        0.2946,
+        0.2002
+    ],
+    "svm_accuracy": 0.9851,
+    "clientes": 1337,
+    "version_sklearn": "1.6.1",
+    "version_python": "3.13.18"
+}
